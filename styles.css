@@ -20,9 +20,13 @@ h2 {
   text-align: center;
 }
 
-.modal-container {
+.hidden {
+  display: none !important;
+}
+
+section.modal-container {
   background-color: rgba(0, 0, 0, 0.5);
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;

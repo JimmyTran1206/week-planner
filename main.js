@@ -1,11 +1,20 @@
+// Input data saved here
+const globalData={
+  entry:[];
+}
+///////////////////////////
 const $submitButton = document.querySelector('.submit');
 const $modalContainer = document.querySelector('.modal-container');
 const $addEntryButton = document.querySelector('.add-entry');
+const $form=document.querySelector('form.add-entry-form')
 
 $addEntryButton.addEventListener('click', function () {
-  $modalContainer.style.display = 'flex';
+  $modalContainer.classList.remove('hidden');
 });
 
-$submitButton.addEventListener('click', function () {
-  $modalContainer.style.display = 'none';
+$submitButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  $modalContainer.classList.add('hidden');
+
+
 });
