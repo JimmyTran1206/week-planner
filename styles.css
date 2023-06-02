@@ -1,5 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #404040;
   margin: 0 auto;
 }
 
@@ -19,7 +22,7 @@ h2 {
 
 .modal-container {
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -33,6 +36,25 @@ h2 {
 
 .add-entry-form {
   background-color: white;
-  width: 500px;
-  height: 400px;
+  width: 800px;
+  height: 350px;
+  padding: 10px 50px;
+}
+
+.flex-left {
+  justify-content: start;
+  margin-bottom: 20px;
+}
+
+select:first-child {
+  margin-right: 10px;
+}
+
+textarea {
+  width: 100%;
+}
+
+.flex-right {
+  padding-top: 10px;
+  justify-content: end;
 }
