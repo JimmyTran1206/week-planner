@@ -26,11 +26,13 @@ $submitButton.addEventListener('click', function (event) {
   entry.description = $description.value;
   globalData.entries.push(entry);
   $form.reset();
+  populateTable($variable);
 });
 
 const $dayButtons = document.querySelector('.day-buttons');
 const $tdTime = document.querySelectorAll('td.time');
 const $tdDescription = document.querySelectorAll('td.description');
+let $variable;
 
 function populateTable(day) {
   let tdIndex = 0;
@@ -50,6 +52,8 @@ function populateTable(day) {
 }
 
 $dayButtons.addEventListener('click', function (e) {
+  $variable = e.target.className;
+
   if (event.target.className === 'sunday') {
     $scheduledEvent.textContent = 'Scheduled Event for Sunday';
     populateTable('sunday');
@@ -79,4 +83,18 @@ $dayButtons.addEventListener('click', function (e) {
     $scheduledEvent.textContent = 'Scheduled Event for Saturday';
     populateTable('saturday');
   }
+});
+
+window.addEventListener('beforeunload', () => {
+  const globalDataJson = JSON.stringify(globalData);
+  localStorage.setItem('javascript-local-storage', globalDataJson);
+});
+
+const storageData = localStorage.getItem('javascript-local-storage');
+JSON.parse(storageData);
+
+window.addEventListener('DOMContentLoaded', () => {
+  populateTable();
+  JSON.parse(storageData);
+
 });
