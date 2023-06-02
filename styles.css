@@ -81,3 +81,30 @@ textarea {
   width: 200px;
   height: 40px;
 }
+
+thead tr {
+  background-color: #ccc;
+}
+
+th:first-child {
+  border-right: 1px solid black;
+}
+
+table {
+  width: 70%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  border-right: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #eee;
+  height: 1.2rem;
+}
+
+tbody tr:nth-child(even) {
+  height: 1.2rem;
+}
